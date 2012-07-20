@@ -1,0 +1,3 @@
+<p>Hello $context.ausschreiberName,<br /> 
+$context.bewerberName has accepted the changed conditions for &quot;$context.ausschreibungName&quot;.<br />
+<small>This is an automatically generated system message.</small></p>

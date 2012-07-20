@@ -1,0 +1,100 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2// EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+	
+	<field name="bewerberId">
+		<field-validator type="required">
+			<message key="bewerbungsVorgang.bewerberId.ungueltig" />
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<message key="bewerbungsVorgang.bewerberId.ungueltig" />
+		</field-validator>
+	</field>
+	
+	<field name="bearbeiterId">
+		<field-validator type="required">
+			<message key="bewerbungsVorgang.bearbeiterId.ungueltig" />
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<message key="bewerbungsVorgang.bearbeiterId.ungueltig" />
+		</field-validator>
+	</field>
+	
+	<field name="ausschreiberId">
+		<field-validator type="required">
+			<message key="bewerbungsVorgang.ausschreiberId.ungueltig" />
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<message key="bewerbungsVorgang.ausschreiberId.ungueltig" />
+		</field-validator>
+	</field>
+	
+	<field name="ausschreibungId">
+		<field-validator type="required">
+			<message key="bewerbungsVorgang.ausschreibungId.ungueltig" />
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<message key="bewerbungsVorgang.ausschreibungId.ungueltig" />
+		</field-validator>
+	</field>
+	
+	<field name="institut">
+		<field-validator type="required">
+			<message key="bewerbungsVorgang.institut.ungueltig" />
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<message key="bewerbungsVorgang.institut.ungueltig" />
+		</field-validator>
+	</field>
+	
+	<field name="stundenzahl">
+		<field-validator type="required">
+			<message key="bewerbungsVorgang.stundenzahl.ungueltig" />
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<message key="bewerbungsVorgang.stundenzahl.ungueltig" />
+		</field-validator>
+	</field>
+	
+	<field name="status">
+		<field-validator type="required">
+			<message key="bewerbungsVorgang.status.ungueltig" />
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">0</param>
+			<param name="max">4</param>
+			<message key="bewerbungsVorgang.status.ungueltig" />
+		</field-validator>
+	</field>
+	
+	<field name="startet">
+		<field-validator type="required">
+			<message key="bewerbungsVorgang.startet.ungueltig" />
+		</field-validator>		
+		<field-validator type="date">
+			<message key="bewerbungsVorgang.startet.ungueltig" />
+		</field-validator>
+	</field>
+	
+	<field name="endet">
+		<field-validator type="required">
+			<message key="bewerbungsVorgang.endet.ungueltig" />
+		</field-validator>		
+		<field-validator type="date">
+			<message key="bewerbungsVorgang.endet.ungueltig" />
+		</field-validator>
+	</field>
+	
+	<field name="kommentar">
+		<field-validator type="requiredstring">
+			<message key="bewerbungsVorgang.kommentar.ungueltig" />
+		</field-validator>		
+	</field>	
+	
+</validators>

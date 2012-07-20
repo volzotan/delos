@@ -1,0 +1,4 @@
+<p>Hallo $context.bewerberName,<br /> 
+deine Bewerbung auf &quot;$context.ausschreibungName&quot; wurde abgelehnt. Bei Fragen dazu wende dich 
+bitte an den Ausschreiber $context.ausschreiberName<br />
+<small>Dies ist eine automatisch generierte Systemnachricht.</small></p>

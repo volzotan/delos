@@ -1,0 +1,4 @@
+<p>Hallo $context.bewerberName,<br /> 
+$context.ausschreiberName hat die Stellenbeschreibung für $context.ausschreibungName geändert.
+Bestätige die Änderungen bitte, erst danach kann die Bewerbung abgeschlossen werden.
+<small>Dies ist eine automatisch generierte Systemnachricht.</small></p>

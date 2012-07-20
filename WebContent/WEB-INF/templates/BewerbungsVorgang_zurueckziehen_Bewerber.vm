@@ -1,0 +1,4 @@
+<p>Hallo $context.bewerberName,<br /> 
+deine Bewerbung auf die Ausschreibung 
+&quot;$context.ausschreibungName&quot; wurde zurückgezogen.<br />
+<small>Dies ist eine automatisch generierte Systemnachricht.</small></p>

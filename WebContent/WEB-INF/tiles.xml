@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="baseLayout" template="/WEB-INF/jsp/Template/base.jsp">
+		<put-attribute name="title" value="Template"/>
+		<put-attribute name="header" value="/WEB-INF/jsp/Template/header.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Template/body.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/jsp/Template/footer.jsp"/>
+	</definition>	
+	
+	<definition name="AusschreibungIndex" extends="baseLayout">
+		<put-attribute name="title" value="Jobs - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Ausschreibung/uebersicht.jsp" />		
+	</definition>
+	<definition name="AusschreibungMeine" extends="baseLayout">
+		<put-attribute name="title" value="Meine Ausschreibungen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Ausschreibung/meine.jsp" />		
+	</definition>
+	<definition name="AusschreibungMeineAktiv" extends="baseLayout">
+		<put-attribute name="title" value="Meine Ausschreibungen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Ausschreibung/meine_aktiv.jsp" />		
+	</definition>
+	<definition name="AusschreibungMeineBeendet" extends="baseLayout">
+		<put-attribute name="title" value="Meine Ausschreibungen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Ausschreibung/meine_beendet.jsp" />		
+	</definition>
+	<definition name="AusschreibungSuchen" extends="baseLayout">
+		<put-attribute name="title" value="Jobs suchen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Ausschreibung/suchen.jsp" />		
+	</definition>
+	<definition name="AusschreibungErstellen" extends="baseLayout">
+		<put-attribute name="title" value="Ausschreibungen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Ausschreibung/erstellen.jsp"/>      
+	</definition>	
+	<definition name="AusschreibungAktualisieren" extends="baseLayout">
+		<put-attribute name="title" value="Ausschreibungen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Ausschreibung/aktualisieren.jsp"/>      
+	</definition>
+	<definition name="AusschreibungAnzeigen" extends="baseLayout">
+		<put-attribute name="title" value="Ausschreibungen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Ausschreibung/anzeigen.jsp"/>      
+	</definition>	
+	
+	<definition name="BewerbungenIndex" extends="baseLayout">
+		<put-attribute name="title" value="Bewerbungen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Ausschreibung/bewerbungen.jsp" />		
+	</definition>
+	<definition name="BewerbungenInstitut" extends="baseLayout">
+		<put-attribute name="title" value="Bewerbungen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Ausschreibung/bewerbungen_institut.jsp" />		
+	</definition>
+	<definition name="BewerbungenAbgelehnt" extends="baseLayout">
+		<put-attribute name="title" value="Bewerbungen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Ausschreibung/bewerbungen_abgelehnt.jsp" />		
+	</definition>
+	<definition name="BewerbungenAbgeschlossen" extends="baseLayout">
+		<put-attribute name="title" value="Bewerbungen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Ausschreibung/bewerbungen_abgeschlossen.jsp" />		
+	</definition>
+	<definition name="BewerbungenAktiv" extends="baseLayout">
+		<put-attribute name="title" value="Bewerbungen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Ausschreibung/bewerbungen_aktiv.jsp" />		
+	</definition>
+	<definition name="BewerbungenNeu" extends="baseLayout">
+		<put-attribute name="title" value="Bewerbungen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Ausschreibung/bewerbungen_neu.jsp" />		
+	</definition>
+	<definition name="BewerbungenZurueckgezogen" extends="baseLayout">
+		<put-attribute name="title" value="Bewerbungen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Ausschreibung/bewerbungen_zurueckgezogen.jsp" />		
+	</definition>
+	
+	<definition name="BenutzerIndex" extends="baseLayout">
+		<put-attribute name="title" value="Benutzerkonten - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Benutzer/uebersichtAlle.jsp"/>      
+	</definition>
+	<definition name="BenutzerIndexAdministratoren" extends="baseLayout">
+		<put-attribute name="title" value="Administratoren - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Benutzer/uebersichtAdministratoren.jsp"/>      
+	</definition>
+	<definition name="BenutzerIndexAusschreiber" extends="baseLayout">
+		<put-attribute name="title" value="Ausschreiber - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Benutzer/uebersichtAusschreiber.jsp"/>      
+	</definition>
+	<definition name="BenutzerIndexBearbeiter" extends="baseLayout">
+		<put-attribute name="title" value="Bearbeiter - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Benutzer/uebersichtBearbeiter.jsp"/>      
+	</definition>
+	<definition name="BenutzerIndexBewerber" extends="baseLayout">
+		<put-attribute name="title" value="Benutzer - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Benutzer/uebersichtBewerber.jsp"/>      
+	</definition>
+	<definition name="BenutzerSuche" extends="baseLayout">
+		<put-attribute name="title" value="Benutzer - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Benutzer/suchergebnis.jsp"/>      
+	</definition>
+	<definition name="BenutzerRegistrieren" extends="baseLayout">
+		<put-attribute name="title" value="Registrieren - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Benutzer/registrieren.jsp"/>      
+	</definition>
+	<definition name="BenutzerErstellen" extends="baseLayout">
+		<put-attribute name="title" value="Neues Konto - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Benutzer/erstellen.jsp"/>      
+	</definition>	
+	<definition name="BenutzerAktualisieren" extends="baseLayout">
+		<put-attribute name="title" value="Profil - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Benutzer/aktualisieren.jsp"/>      
+	</definition>
+	<definition name="BenutzerAnzeigen" extends="baseLayout">
+		<put-attribute name="title" value="Profil - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Benutzer/anzeigen.jsp"/>      
+	</definition>
+	<definition name="BenutzerAnmelden" extends="baseLayout">
+		<put-attribute name="title" value="Anmelden - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Benutzer/anmelden.jsp"/>      
+	</definition>
+	<definition name="BenutzerPasswortAnfordern" extends="baseLayout">
+		<put-attribute name="title" value="Anmelden - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Benutzer/passwortAnfordern.jsp"/>      
+	</definition>	
+	<definition name="BenutzerTour" extends="baseLayout">
+		<put-attribute name="title" value="Willkommen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Benutzer/benutzerTour.jsp"/>      
+	</definition>	
+	
+	<definition name="BewerbungsVorgangErstellen" extends="baseLayout">
+		<put-attribute name="title" value="Neue Bewerbung - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/BewerbungsVorgang/erstellen.jsp"/>      
+	</definition>	
+	<definition name="BewerbungsVorgangAnzeigen" extends="baseLayout">
+		<put-attribute name="title" value="Bewerbungen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/BewerbungsVorgang/anzeigen.jsp"/>      
+	</definition>	
+	<definition name="BewerbungsVorgangAktualisieren" extends="baseLayout">
+		<put-attribute name="title" value="Bewerbungen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/BewerbungsVorgang/aktualisieren.jsp"/>      
+	</definition>		
+	
+	<definition name="DokumentIndex" extends="baseLayout">
+		<put-attribute name="title" value="Dokumente - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Dokument/uebersicht.jsp"/>      
+	</definition>
+	<definition name="DokumentErstellen" extends="baseLayout">
+		<put-attribute name="title" value="Neues Dokument - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Dokument/erstellen.jsp"/>      
+	</definition>	
+	<definition name="DokumentAktualisieren" extends="baseLayout">
+		<put-attribute name="title" value="Dokumente - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Dokument/aktualisieren.jsp"/>      
+	</definition>
+	<definition name="DokumentAnzeigen" extends="baseLayout">
+		<put-attribute name="title" value="Dokumente - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Dokument/anzeigen.jsp"/>      
+	</definition>
+	<definition name="DokumentMeinedokumente" extends="baseLayout">
+		<put-attribute name="title" value="Meine Dokumente - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Dokument/meinedokumente.jsp"/>      
+	</definition>
+	<definition name="DokumentBenoetigteDokumenteBearbeiter" extends="baseLayout">
+		<put-attribute name="title" value="Meine Dokumente - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Dokument/benoetigteDokumente.jsp"/>      
+	</definition>
+	<definition name="DokumentUnbenoetigteDokumenteBearbeiter" extends="baseLayout">
+		<put-attribute name="title" value="Meine Dokumente - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Dokument/unbenoetigteDokumente.jsp"/>      
+	</definition>
+	
+	<definition name="NachrichtPosteingang" extends="baseLayout">
+		<put-attribute name="title" value="Posteingang - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Nachricht/posteingang.jsp"/>      
+	</definition>
+	<definition name="NachrichtPostausgang" extends="baseLayout">
+		<put-attribute name="title" value="Postausgang - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Nachricht/postausgang.jsp"/>      
+	</definition>
+	<definition name="NachrichtPapierkorb" extends="baseLayout">
+		<put-attribute name="title" value="Papierkorb - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Nachricht/papierkorb.jsp"/>      
+	</definition>
+	<definition name="NachrichtAntworten" extends="baseLayout">
+		<put-attribute name="title" value="Antworten - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Nachricht/antworten.jsp"/>      
+	</definition>
+	<definition name="NachrichtErstellen" extends="baseLayout">
+		<put-attribute name="title" value="Neue Nachricht - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Nachricht/erstellen.jsp"/>      
+	</definition>
+	<definition name="NachrichtAnzeigen" extends="baseLayout">
+		<put-attribute name="title" value="Nachricht - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Nachricht/anzeigen.jsp"/>      
+	</definition>	
+	
+	<definition name="SeiteIndex" extends="baseLayout">
+		<put-attribute name="title" value="delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Seite/index.jsp"/>      
+	</definition>
+	<definition name="SeiteIndexAdmin" extends="baseLayout">
+		<put-attribute name="title" value="delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Seite/indexAdmin.jsp"/>      
+	</definition>	
+	<definition name="SeiteIndexBewerber" extends="baseLayout">
+		<put-attribute name="title" value="delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Seite/indexBewerber.jsp"/>      
+	</definition>	
+	<definition name="SeiteIndexAusschreiber" extends="baseLayout">
+		<put-attribute name="title" value="delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Seite/indexAusschreiber.jsp"/>      
+	</definition>	
+	<definition name="SeiteIndexBearbeiter" extends="baseLayout">
+		<put-attribute name="title" value="delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Seite/indexBearbeiter.jsp"/>      
+	</definition>
+		
+	<definition name="SeiteHilfeEN" extends="baseLayout">
+		<put-attribute name="title" value="Help - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Seite/hilfeEN.jsp"/>      
+	</definition>
+	<definition name="SeiteHilfeDE" extends="baseLayout">
+		<put-attribute name="title" value="Hilfe - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Seite/hilfeDE.jsp"/>      
+	</definition>
+	<definition name="SeiteAdmin" extends="baseLayout">
+		<put-attribute name="title" value="Admin - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Seite/admin.jsp"/>      
+	</definition>	
+	<definition name="SeiteUeber" extends="baseLayout">
+		<put-attribute name="title" value="Was ist delos? - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Seite/ueber.jsp"/>      
+	</definition>	
+	<definition name="SeiteImpressum" extends="baseLayout">
+		<put-attribute name="title" value="Impressum - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Seite/impressum.jsp"/>      
+	</definition>
+	<definition name="SeiteNutzungsbedingungen" extends="baseLayout">
+		<put-attribute name="title" value="Nutzungsbedingungen - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Seite/nutzungsbedingungen.jsp"/>      
+	</definition>
+	<definition name="SeiteDatenschutz" extends="baseLayout">
+		<put-attribute name="title" value="Datenschutzerklärung - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Seite/datenschutz.jsp"/>      
+	</definition>
+	
+	<definition name="Exception" extends="baseLayout">
+		<put-attribute name="title" value="Error - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Exception/index.jsp"/>      
+	</definition>	 
+	<definition name="ZugriffsException" extends="baseLayout">
+		<put-attribute name="title" value="Unbefugter Zugriff - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Exception/zugriffsException.jsp"/>      
+	</definition>
+	<definition name="404" extends="baseLayout">
+		<put-attribute name="title" value="404 Error - delos Universität Ulm"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/Exception/404.jsp"/>      
+	</definition>	   
+</tiles-definitions>

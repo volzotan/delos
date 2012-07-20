@@ -1,0 +1,4 @@
+<p>Hallo $context.ausschreiberName,<br /> 
+die Bewerbung von $context.bewerberName auf deine Ausschreibung 
+&quot;$context.ausschreibungName&quot; wurde vom Beweber zurückgezogen.<br />
+<small>Dies ist eine automatisch generierte Systemnachricht.</small></p>

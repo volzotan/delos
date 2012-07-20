@@ -1,0 +1,4 @@
+<p>Hallo $context.bewerberName,<br /> 
+deine Bewerbung auf &quot;$context.ausschreibungName&quot; war erfolgreich. 
+Der Bearbeiter hat den Bewerbungsvorgang abgeschlossen, du hast alle Dokumente und den Vertrag unterzeichnet, herzlichen Gl&uuml;ckwunsch.<br />
+<small>Dies ist eine automatisch generierte Systemnachricht.</small></p>

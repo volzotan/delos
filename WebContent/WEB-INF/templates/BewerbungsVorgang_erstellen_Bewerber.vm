@@ -1,0 +1,4 @@
+<p>Hallo $context.bewerberName,<br /> 
+du hast dich auf &quot;$context.ausschreibungName&quot; beworben.
+Der Ausschreiber wird sich deine Bewerbung ansehen und diese dann entsprechend bearbeiten.<br />
+<small>Dies ist eine automatisch generierte Systemnachricht.</small></p>

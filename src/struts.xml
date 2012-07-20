@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+   <constant name="struts.devMode" value="false" />
+   
+   <constant name="struts.custom.i18n.resources" value="global" />
+   <constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
+   <constant name="struts.action.extension" value="action" />
+
+		<package name="default" namespace="/" extends="struts-default"> 
+
+			<result-types>
+				<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" default="true" />
+			</result-types>
+			
+			<interceptors>
+				<interceptor name="authentifizierungsInterceptor" class="de.uulm.sopra.delos.system.AuthentifizierungsInterceptor"/>
+				<interceptor-stack name="datenbankStack">
+					<interceptor-ref name="exception"/>
+					<interceptor-ref name="timer">
+						<param name="logCategory">de.uulm.sopra.delos.timer</param>
+					</interceptor-ref>
+					<interceptor-ref name="authentifizierungsInterceptor"/>
+					<interceptor-ref name="defaultStack"/>
+				</interceptor-stack>
+			</interceptors>		
+			
+			<default-interceptor-ref name="datenbankStack"/>	
+			
+			<default-action-ref name="Seite_index"/>
+			
+			<global-results>
+				<result name="exception">Exception</result>
+				<result name="zugriffsException">ZugriffsException</result>
+				<result name="login" type="redirectAction">
+					<param name="actionName">Benutzer_anmelden</param>			
+				</result>
+				<result name="error" type="redirectAction">
+					<param name="actionName">${actionHistoryStack[1]}</param>
+				</result>
+				<result name="input">404</result>
+				<result name="startseite" type="redirectAction">
+					<param name="actionName">Seite_index</param>
+				</result>
+				<result name="404">404</result>
+			</global-results>
+
+			<global-exception-mappings>
+				<exception-mapping exception="java.lang.Exception" result="exception"/>
+				<exception-mapping exception="ZugriffsException" result="zugriffsException"/>
+			</global-exception-mappings>
+												
+			<!-- AUSSCHREIBUNG -->
+			
+			<action name="Ausschreibung_index" method="index" class="de.uulm.sopra.delos.action.AusschreibungAction">
+				<result name="success">AusschreibungIndex</result>				
+			</action>
+			<action name="Ausschreibung_meine" method="indexMeine" class="de.uulm.sopra.delos.action.AusschreibungAction">
+				<result name="success">AusschreibungMeine</result>				
+			</action>
+			<action name="Ausschreibung_meine_aktiv" method="indexMeineAktiv" class="de.uulm.sopra.delos.action.AusschreibungAction">
+				<result name="success">AusschreibungMeineAktiv</result>				
+			</action>
+			<action name="Ausschreibung_meine_beendet" method="indexMeineBeendet" class="de.uulm.sopra.delos.action.AusschreibungAction">
+				<result name="success">AusschreibungMeineBeendet</result>				
+			</action>
+			<action name="Ausschreibung_erstellen" method="erstellen" class="de.uulm.sopra.delos.action.AusschreibungAction">
+				<result name="input">AusschreibungErstellen</result>
+				<result name="success" type="redirectAction">
+					<param name="actionName">Ausschreibung_index</param>			
+				</result>
+			</action>			
+			<action name="Ausschreibung_anzeigen" method="anzeigen" class="de.uulm.sopra.delos.action.AusschreibungAction">
+				<result name="success">AusschreibungAnzeigen</result>			
+			</action>			
+			<action name="Ausschreibung_aktualisieren" method="aktualisieren" class="de.uulm.sopra.delos.action.AusschreibungAction">
+				<result name="input">AusschreibungAktualisieren</result>
+				<result name="success" type="redirectAction">
+					<param name="actionName">Ausschreibung_index</param>			
+				</result>				
+			</action>			
+			<action name="Ausschreibung_loeschen" method="loeschen" class="de.uulm.sopra.delos.action.AusschreibungAction">
+				<result name="input" type="redirectAction">
+					<param name="actionName">Ausschreibung_index</param>
+				</result>
+				<result name="success" type="redirectAction">
+					<param name="actionName">Ausschreibung_index</param>
+				</result>				
+			</action>
+			<action name="Ausschreibung_vorzeitigBeenden" method="vorzeitigBeenden" class="de.uulm.sopra.delos.action.AusschreibungAction">
+				<result name="success">AusschreibungAnzeigen</result>				
+			</action>
+			<action name="Ausschreibung_suchen" method="suchen" class="de.uulm.sopra.delos.action.AusschreibungAction">
+				<result name="input">AusschreibungSuchen</result>
+				<result name="success">AusschreibungSuchen</result>				
+			</action>
+			
+			<action name="Bewerbungen_index" method="indexBewerbungen" class="de.uulm.sopra.delos.action.AusschreibungAction">
+				<result name="success">BewerbungenIndex</result>				
+			</action>
+			<action name="Bewerbungen_institut" method="indexBewerbungenInstitut" class="de.uulm.sopra.delos.action.AusschreibungAction">
+				<result name="success">BewerbungenInstitut</result>				
+			</action>
+			<action name="Bewerbungen_abgelehnt" method="indexBewerbungenAbgelehnt" class="de.uulm.sopra.delos.action.AusschreibungAction">
+				<result name="success">BewerbungenAbgelehnt</result>				
+			</action>
+			<action name="Bewerbungen_abgeschlossen" method="indexBewerbungenAbgeschlossen" class="de.uulm.sopra.delos.action.AusschreibungAction">
+				<result name="success">BewerbungenAbgeschlossen</result>				
+			</action>
+			<action name="Bewerbungen_aktiv" method="indexBewerbungenAktiv" class="de.uulm.sopra.delos.action.AusschreibungAction">
+				<result name="success">BewerbungenAktiv</result>				
+			</action>
+			<action name="Bewerbungen_neu" method="indexBewerbungenNeu" class="de.uulm.sopra.delos.action.AusschreibungAction">
+				<result name="success">BewerbungenNeu</result>				
+			</action>
+			<action name="Bewerbungen_zurueckgezogen" method="indexBewerbungenZurueckgezogen" class="de.uulm.sopra.delos.action.AusschreibungAction">
+				<result name="success">BewerbungenZurueckgezogen</result>				
+			</action>		
+			
+			<!-- BENUTZER -->
+			
+			<action name="Benutzer_index" method="index" class="de.uulm.sopra.delos.action.BenutzerAction">
+				<result name="success">BenutzerIndex</result>				
+			</action>
+			<action name="Benutzer_suche" method="suche" class="de.uulm.sopra.delos.action.BenutzerAction">
+				<result name="success">BenutzerSuche</result>				
+			</action>
+			<action name="Benutzer_index_administratoren" method="indexAdministratoren" class="de.uulm.sopra.delos.action.BenutzerAction">
+				<result name="success">BenutzerIndexAdministratoren</result>				
+			</action>	
+			<action name="Benutzer_index_ausschreiber" method="indexAusschreiber" class="de.uulm.sopra.delos.action.BenutzerAction">
+				<result name="success">BenutzerIndexAusschreiber</result>				
+			</action>	
+			<action name="Benutzer_index_bearbeiter" method="indexBearbeiter" class="de.uulm.sopra.delos.action.BenutzerAction">
+				<result name="success">BenutzerIndexBearbeiter</result>				
+			</action>	
+			<action name="Benutzer_index_bewerber" method="indexBewerber" class="de.uulm.sopra.delos.action.BenutzerAction">
+				<result name="success">BenutzerIndexBewerber</result>				
+			</action>	
+			<action name="Benutzer_registrieren" method="registrieren" class="de.uulm.sopra.delos.action.BenutzerAction">
+				<result name="input">BenutzerRegistrieren</result>
+				<result name="benutzerIndex" type="redirectAction">
+					<param name="actionName">Benutzer_index</param>
+				</result>				
+			</action>
+			<action name="Benutzer_erstellen" method="erstellen" class="de.uulm.sopra.delos.action.BenutzerAction">
+				<result name="input">BenutzerErstellen</result>
+				<result name="success" type="redirectAction">
+					<param name="actionName">Seite_index</param>
+				</result>			
+			</action>
+			<action name="Benutzer_anzeigen" method="anzeigen" class="de.uulm.sopra.delos.action.BenutzerAction">
+				<result name="success">BenutzerAnzeigen</result>			
+			</action>			
+			<action name="Benutzer_aktualisieren" method="aktualisieren" class="de.uulm.sopra.delos.action.BenutzerAction">
+				<result name="input">BenutzerAktualisieren</result>
+				<result name="success" type="redirectAction">
+					<param name="actionName">Benutzer_aktualisieren</param>
+					<param name="benutzerId">${benutzerId}</param>
+				</result>	
+				<result name="benutzerIndex" type="redirectAction">
+					<param name="actionName">Benutzer_index</param>
+				</result>			
+			</action>
+			<action name="Benutzer_loeschen" method="loeschen" class="de.uulm.sopra.delos.action.BenutzerAction">
+				<result name="input" type="redirectAction">
+					<param name="actionName">Benutzer_anzeigen</param>
+					<param name="benutzerId">${benutzerId}</param>
+				</result>
+				<result name="success" type="redirectAction">
+					<param name="actionName">Benutzer_index</param>
+				</result>
+				
+			</action>			
+			<action name="Benutzer_anmelden" method="anmelden" class="de.uulm.sopra.delos.action.BenutzerAction">
+				<result name="input">BenutzerAnmelden</result>
+				<result name="success" type="redirect">${actionHistoryStack[2]}</result>			
+			</action>
+			<action name="Benutzer_abmelden" method="abmelden" class="de.uulm.sopra.delos.action.BenutzerAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">Seite_index</param>
+				</result>				
+			</action>			
+			<action name="Benutzer_passwortAnfordern" method="passwortAnfordern" class="de.uulm.sopra.delos.action.BenutzerAction">
+				<result name="input">BenutzerPasswortAnfordern</result>
+				<result name="success" type="redirectAction">
+					<param name="actionName">Seite_index</param>
+				</result>			
+			</action>	
+			<action name="Benutzer_vertreterAnmelden" method="vertreterAnmelden" class="de.uulm.sopra.delos.action.BenutzerAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">Seite_index</param>
+				</result>		
+			</action>	
+		
+			<!-- BEWERBUNGSVORGANG -->
+				
+			<action name="BewerbungsVorgang_erstellen" method="erstellen" class="de.uulm.sopra.delos.action.BewerbungsVorgangAction">
+				<result name="input">BewerbungsVorgangErstellen</result>
+				<result name="success" type="redirectAction">
+					<param name="actionName">BewerbungsVorgang_anzeigen</param>
+					<param name="bewerbungsVorgangId">${bewerbungsVorgangId}</param>
+				</result>		
+			</action>
+			<action name="BewerbungsVorgang_anzeigen" method="anzeigen" class="de.uulm.sopra.delos.action.BewerbungsVorgangAction">
+				<result name="success">BewerbungsVorgangAnzeigen</result>				
+			</action>
+			<action name="BewerbungsVorgang_aktualisieren" method="aktualisieren" class="de.uulm.sopra.delos.action.BewerbungsVorgangAction">
+				<result name="input">BewerbungsVorgangAktualisieren</result>
+				<result name="success" type="redirectAction">
+					<param name="actionName">BewerbungsVorgang_anzeigen</param>
+					<param name="bewerbungsVorgangId">${bewerbungsVorgangId}</param>
+				</result>				
+			</action>					
+			<action name="BewerbungsVorgang_zurueckziehen" method="zurueckziehen" class="de.uulm.sopra.delos.action.BewerbungsVorgangAction">
+				<result name="input" type="redirectAction">
+					<param name="actionName">Ausschreibung_index</param>
+				</result>
+				<result name="success" type="redirectAction">
+					<param name="actionName">Ausschreibung_index</param>
+				</result>				
+			</action>
+			<action name="BewerbungsVorgang_akzeptieren" method="akzeptieren" class="de.uulm.sopra.delos.action.BewerbungsVorgangAction">
+				<result name="input" type="redirectAction">
+					<param name="actionName">Ausschreibung_index</param>
+				</result>
+				<result name="success" type="redirectAction">
+					<param name="actionName">Ausschreibung_index</param>
+				</result>				
+			</action>
+			<action name="BewerbungsVorgang_abschliessen" method="abschliessen" class="de.uulm.sopra.delos.action.BewerbungsVorgangAction">
+				<result name="input" type="redirectAction">
+					<param name="actionName">Ausschreibung_index</param>
+				</result>
+				<result name="success" type="redirectAction">
+					<param name="actionName">Ausschreibung_index</param>
+				</result>				
+			</action>										
+			<action name="BewerbungsVorgang_ablehnen" method="ablehnen" class="de.uulm.sopra.delos.action.BewerbungsVorgangAction">
+				<result name="input" type="redirectAction">
+					<param name="actionName">Ausschreibung_index</param>
+				</result>
+				<result name="success" type="redirectAction">
+					<param name="actionName">Ausschreibung_index</param>
+				</result>			
+			</action>		
+			<action name="BewerbungsVorgang_aenderungenAkzeptieren" method="aenderungenAkzeptieren" class="de.uulm.sopra.delos.action.BewerbungsVorgangAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">BewerbungsVorgang_anzeigen</param>
+					<param name="bewerbungsVorgangId">${bewerbungsVorgangId}</param>
+				</result>		
+			</action>			
+			<action name="BewerbungsVorgang_exportieren" method="exportieren" class="de.uulm.sopra.delos.action.BewerbungsVorgangAction">
+				<result name="success" type="stream">
+					<param name="contentType">application/octet-stream</param>
+					<param name="inputName">fileInputStream</param>
+					<param name="contentDisposition">attachment;filename="AusschreibungExport.csv"</param>
+					<param name="bufferSize">1024</param>
+				</result>
+			</action>	
+			<action name="BewerbungsVorgang_dokument_multi_checkbox" method="dokumentMultiCheckboxAuswertung" class="de.uulm.sopra.delos.action.BewerbungsVorgangAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">BewerbungsVorgang_anzeigen</param>
+					<param name="bewerbungsVorgangId">${bewerbungsVorgangId}</param>
+				</result>	
+			</action>
+			
+			
+			<!-- DOKUMENT -->
+			
+			<action name="Dokument_index" method="index" class="de.uulm.sopra.delos.action.DokumentAction">
+				<result name="success">DokumentIndex</result>				
+			</action>
+			
+			<action name="Dokument_erstellen" method="erstellen" class="de.uulm.sopra.delos.action.DokumentAction">
+				<result name="input">DokumentErstellen</result>
+				<result name="success" type="redirectAction">
+					<param name="actionName">Dokument_index</param>			
+				</result>			
+			</action>
+			
+			<action name="Dokument_anzeigen" method="anzeigen" class="de.uulm.sopra.delos.action.DokumentAction">
+				<result name="success">DokumentAnzeigen</result>				
+			</action>
+			
+			<action name="Dokument_aktualisieren" method="aktualisieren" class="de.uulm.sopra.delos.action.DokumentAction">
+				<result name="input">DokumentAktualisieren</result>
+				<result name="success" type="redirectAction">
+					<param name="actionName">Dokument_index</param>			
+				</result>				
+			</action>
+			
+			<action name="Dokument_loeschen" method="loeschen" class="de.uulm.sopra.delos.action.DokumentAction">
+				<result name="success">DokumentIndex</result>				
+			</action>
+			
+			<action name="Dokument_bewerbungsVorgangDokumentLoeschen" method="bewerbungsVorgangDokumentLoeschen" class="de.uulm.sopra.delos.action.DokumentAction">
+				<result name="success">DokumentBenoetigteDokumenteBearbeiter</result>				
+			</action>
+			
+			<action name="Dokument_benoetigteDokumenteBearbeiter" method="benoetigteDokumenteBearbeiter" class="de.uulm.sopra.delos.action.DokumentAction">
+				<result name="success">DokumentBenoetigteDokumenteBearbeiter</result>				
+			</action>
+			
+			<action name="Dokument_unbenoetigteDokumenteBearbeiter" method="unbenoetigteDokumenteBearbeiter" class="de.uulm.sopra.delos.action.DokumentAction">
+				<result name="success">DokumentUnbenoetigteDokumenteBearbeiter</result>
+			</action>
+			
+			<action name="Dokument_benoetigteDokumenteBearbeiter_multi" method="multiCheckBoxAuswertung" class="de.uulm.sopra.delos.action.DokumentAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">Dokument_benoetigteDokumenteBearbeiter</param>
+					<param name="bewerbungsVorgangId">${bewerbungsVorgangId}</param>
+				</result>
+				<result name="none" type="redirectAction">
+					<param name="actionName">Seite_index</param>
+				</result>				
+			</action>
+			
+			<action name="Dokument_unbenoetigteDokumenteBearbeiter_multi" method="multiCheckBoxAuswertungHinzufuegen" class="de.uulm.sopra.delos.action.DokumentAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">Dokument_unbenoetigteDokumenteBearbeiter</param>
+					<param name="bewerbungsVorgangId">${bewerbungsVorgangId}</param>
+				</result>
+				<result name="none" type="redirectAction">
+					<param name="actionName">Seite_index</param>
+				</result>				
+			</action>
+			
+			<action name="Dokument_multi_checkbox" method="multiCheckBoxAuswertungLoeschen" class="de.uulm.sopra.delos.action.DokumentAction">
+				<result name="success" type="redirectAction">					
+					<param name="actionName">Dokument_index</param>
+				</result>
+				<result name="none" type="redirectAction">
+					<param name="actionName">Seite_index</param>
+				</result>				
+			</action>
+			
+			<action name="Dokument_standardDokumenteHinzufuegen" method="standardDokumenteHinzufuegen" class="de.uulm.sopra.delos.action.DokumentAction">
+				<result name="success">DokumentBenoetigteDokumenteBearbeiter</result>			
+			</action>
+			
+			<!--  NACHRICHTEN -->
+			
+			<action name="Nachricht_posteingang" method="indexPosteingang" class="de.uulm.sopra.delos.action.NachrichtAction">
+				<result name="success">NachrichtPosteingang</result>			
+			</action>
+			
+			<action name="Nachricht_postausgang" method="indexPostausgang" class="de.uulm.sopra.delos.action.NachrichtAction">
+				<result name="success">NachrichtPostausgang</result>			
+			</action>
+			
+			<action name="Nachricht_papierkorb" method="indexPapierkorb" class="de.uulm.sopra.delos.action.NachrichtAction">
+				<result name="success">NachrichtPapierkorb</result>			
+			</action>
+			
+			<action name="Nachricht_anzeigen" method="anzeigen" class="de.uulm.sopra.delos.action.NachrichtAction">
+				<result name="success">NachrichtAnzeigen</result>			
+			</action>
+			
+			<action name="Nachricht_antworten" method="antworten" class="de.uulm.sopra.delos.action.NachrichtAction">				
+				<result name="input">NachrichtAntworten</result>
+				<result name="success" type="redirectAction">
+					<param name="actionName">Nachricht_anzeigen</param>
+					<param name="nachrichtId">${nachrichtId}</param>
+				</result>				
+				<result name="error" type="redirectAction">
+					<param name="actionName">Nachricht_anzeigen</param>
+					<param name="nachrichtId">${nachrichtId}</param>
+				</result>
+			</action>
+			
+			<action name="Nachricht_erstellen" method="erstellen" class="de.uulm.sopra.delos.action.NachrichtAction">
+				<result name="input">NachrichtErstellen</result>
+				<result name="success" type="redirect">${actionHistoryStack[0]}</result>				
+				<result name="error" type="redirect">${actionHistoryStack[0]}</result>
+			</action>
+			
+			<action name="Nachricht_pe_loeschen" method="einzelnLoeschen" class="de.uulm.sopra.delos.action.NachrichtAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">Nachricht_posteingang</param>
+				</result>
+				<result name="error" type="redirectAction">
+					<param name="actionName">Nachricht_posteingang</param>			
+				</result>			
+			</action>
+			
+			<action name="Nachricht_pa_loeschen" method="einzelnLoeschen" class="de.uulm.sopra.delos.action.NachrichtAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">Nachricht_postausgang</param>
+				</result>
+				<result name="error" type="redirectAction">
+					<param name="actionName">Nachricht_postausgang</param>		
+				</result>				
+			</action>
+			
+			<action name="Nachricht_pk_loeschen" method="einzelnLoeschen" class="de.uulm.sopra.delos.action.NachrichtAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">Nachricht_papierkorb</param>
+				</result>
+				<result name="error" type="redirectAction">
+					<param name="actionName">Nachricht_papierkorb</param>		
+				</result>				
+			</action>
+			
+			<action name="Nachricht_wiederherstellen" method="einzelnWiederherstellen" class="de.uulm.sopra.delos.action.NachrichtAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">Nachricht_papierkorb</param>
+				</result>
+				<result name="error" type="redirectAction">
+					<param name="actionName">Nachricht_papierkorb</param>		
+				</result>				
+			</action>
+			
+			<action name="Nachricht_pe_multi_checkbox" method="multiCheckBoxAuswertung" class="de.uulm.sopra.delos.action.NachrichtAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">Nachricht_posteingang</param>
+				</result>
+				<result name="none" type="redirectAction">
+					<param name="actionName">Nachricht_posteingang</param>
+				</result>
+				<result name="error" type="redirectAction">
+					<param name="actionName">Nachricht_posteingang</param>	
+				</result>				
+			</action>
+			
+			<action name="Nachricht_pa_multi_checkbox" method="multiCheckBoxAuswertung" class="de.uulm.sopra.delos.action.NachrichtAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">Nachricht_postausgang</param>
+				</result>
+				<result name="none" type="redirectAction">
+					<param name="actionName">Nachricht_postausgang</param>
+				</result>
+				<result name="error" type="redirectAction">
+					<param name="actionName">Nachricht_postausgang</param>		
+				</result>				
+			</action>
+			
+			<action name="Nachricht_pk_multi_checkbox" method="multiCheckBoxAuswertung" class="de.uulm.sopra.delos.action.NachrichtAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">Nachricht_papierkorb</param>
+				</result>
+				<result name="none" type="redirectAction">
+					<param name="actionName">Nachricht_papierkorb</param>
+				</result>
+				<result name="error" type="redirectAction">
+					<param name="actionName">Nachricht_papierkorb</param>		
+				</result>				
+			</action>
+			
+			<!-- SEITE -->
+			
+			<action name="Seite_index" method="index" class="de.uulm.sopra.delos.action.SeiteAction">
+				<result name="index">SeiteIndex</result>
+				<result name="indexAdmin">SeiteIndexAdmin</result>	
+				<result name="indexBewerber">SeiteIndexBewerber</result>				
+				<result name="indexAusschreiber">SeiteIndexAusschreiber</result>				
+				<result name="indexBearbeiter">SeiteIndexBearbeiter</result>							
+			</action>
+			
+			<action name="Seite_hilfe" method="hilfe" class="de.uulm.sopra.delos.action.SeiteAction">
+				<result name="hilfeEN">SeiteHilfeEN</result>	
+				<result name="hilfeDE">SeiteHilfeDE</result>				
+			</action>
+			
+			<action name="Seite_admin" method="administration" class="de.uulm.sopra.delos.action.SeiteAction">
+				<result name="success">SeiteAdmin</result>
+			</action>
+			
+			<action name="Seite_kontakt" method="kontakt" class="de.uulm.sopra.delos.action.SeiteAction">
+				<result name="success">SeiteKontakt</result>
+			</action>		
+			
+			<action name="Seite_ueber" method="ueber" class="de.uulm.sopra.delos.action.SeiteAction">
+				<result name="success">SeiteUeber</result>
+			</action>
+			<action name="Seite_impressum" class="de.uulm.sopra.delos.action.SeiteAction">
+				<result>SeiteImpressum</result>
+			</action>
+			<action name="Seite_nutzungsbedingungen" class="de.uulm.sopra.delos.action.SeiteAction">
+				<result>SeiteNutzungsbedingungen</result>
+			</action>
+			<action name="Seite_datenschutz" class="de.uulm.sopra.delos.action.SeiteAction">
+				<result>SeiteDatenschutz</result>
+			</action>		
+						
+			<action name="*" method="viernullvier" class="de.uulm.sopra.delos.action.SeiteAction">
+				<result name="success">404</result>
+			</action>
+	
+		</package>	
+
+</struts>

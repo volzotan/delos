@@ -1,0 +1,4 @@
+<p>Hello $context.bearbeiterName,<br /> 
+the application by $context.bewerberName for the advertisement  
+&quot;$context.ausschreibungName&quot; created by $context.ausschreiberName has been withdrawn by the applicant.<br />
+<small>This is an automatically generated system message.</small></p>

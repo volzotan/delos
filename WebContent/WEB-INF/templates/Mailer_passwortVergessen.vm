@@ -1,0 +1,3 @@
+<p>Hallo,<br /> 
+du hast dein Passwort für delos, der HK-Börse der Universität Ulm, vergessen und zurückgesetzt.<br />
+Dein neues Passwort: $context.passwort<br />

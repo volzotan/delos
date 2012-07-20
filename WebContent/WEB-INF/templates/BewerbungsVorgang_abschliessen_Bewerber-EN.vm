@@ -1,0 +1,4 @@
+<p>Hello $context.bewerberName,<br /> 
+your application for &quot;$context.ausschreibungName&quot; was successful. 
+The interviewer marked this application as finished: you handed in all required documents and signed the contract, congratulations!<br />
+<small>This is an automatically generated system message.</small></p>

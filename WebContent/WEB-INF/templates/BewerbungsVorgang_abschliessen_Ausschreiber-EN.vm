@@ -1,0 +1,3 @@
+<p>Hello $context.ausschreiberName,<br /> 
+the application of $context.bewerberName for your advertisement &quot;$context.ausschreibungName&quot; has been finished. $context.bewerberName will fill in one of the vacancies.<br />
+<small>This is an automatically generated system message.</small></p>

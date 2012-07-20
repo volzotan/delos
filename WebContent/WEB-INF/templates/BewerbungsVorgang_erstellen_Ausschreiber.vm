@@ -1,0 +1,3 @@
+<p>Hallo $context.ausschreiberName,<br />
+es liegt eine neue Bewerbung von $context.bewerberName f&uuml;r die Ausschreibung $context.ausschreibungName vor.<br />
+<small>Dies ist eine automatisch generierte Systemnachricht.</small></p>

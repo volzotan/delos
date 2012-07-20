@@ -1,0 +1,3 @@
+<p>Hello $context.ausschreiberName,<br /> 
+$context.bewerberName applied to &quot;$context.ausschreibungName&quot; and was accepted by the creator of said advertisement.<br />
+<small>This is an automatically generated system message.</small></p>

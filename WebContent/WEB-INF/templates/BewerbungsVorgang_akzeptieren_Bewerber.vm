@@ -1,0 +1,5 @@
+<p>Hallo $context.bewerberName,<br /> 
+deine Bewerbung auf &quot;$context.ausschreibungName&quot; war erfolgreich. 
+Der Ausschreiber hat deine Bewerbung akzeptiert und an den Bearbeiter $context.bearbeiterName weitergereicht.<br />
+Du musst jetzt die bei der Bewerbung vermerkten Dokumente einreichen!<br />
+<small>Dies ist eine automatisch generierte Systemnachricht.</small></p>

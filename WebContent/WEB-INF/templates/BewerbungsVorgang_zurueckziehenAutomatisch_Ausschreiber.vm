@@ -1,0 +1,5 @@
+<p>Hallo $context.ausschreiberName,<br /> 
+die Bewerbung von $context.bewerberName auf deine Ausschreibung 
+&quot;$context.ausschreibungName&quot; wurde vom System zurückgezogen,
+der Benutzer hat sein Benutzerkonto gelöscht.<br />
+<small>Dies ist eine automatisch generierte Systemnachricht.</small></p>

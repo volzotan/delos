@@ -1,0 +1,3 @@
+<p>Hallo $context.vertreterName,<br /> 
+$context.benutzerName hat dich zu seinem Stellvertreter benannt. Du kannst dich über das Benutzermenü in seinem Account anmelden.<br />
+<small>Dies ist eine automatisch generierte Systemnachricht.</small></p>

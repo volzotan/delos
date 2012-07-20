@@ -1,0 +1,3 @@
+<p>Hello $context.vertreterName,<br /> 
+$context.benutzerName named you a sitter for their account. You can log into their account using the user menu at the top of the website.<br />
+<small>This is an automatically generated system message.</small></p>

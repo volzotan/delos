@@ -1,0 +1,3 @@
+<p>Hello,<br /> 
+you forgot your password on delos - the student assistant platform of the University Ulm - and asked for it to be reset.<br />
+Your new password is: $context.passwort<br />

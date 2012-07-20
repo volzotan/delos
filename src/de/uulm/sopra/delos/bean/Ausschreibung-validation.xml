@@ -1,0 +1,98 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2// EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+	
+	<field name="bearbeiterId">
+		<field-validator type="required">
+			<message key="Ausschreibung.speichern.bearbeiterId.benoetigt" />
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<message key="Ausschreibung.speichern.bearbeiterId.benoetigt" />
+		</field-validator>
+	</field>
+	
+	<field name="ausschreiberId">
+		<field-validator type="required">
+			<message key="Ausschreibung.speichern.ausschreiberId.benoetigt" />
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<message key="Ausschreibung.speichern.ausschreiberId.benoetigt" />
+		</field-validator>
+	</field>
+	
+	<field name="institut">
+		<field-validator type="required">
+			<message key="Ausschreibung.speichern.institut.benoetigt" />
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<message key="Ausschreibung.speichern.institut.benoetigt" />
+		</field-validator>
+	</field>
+	
+	<field name="stundenzahl">
+		<field-validator type="required">
+			<message key="Ausschreibung.speichern.stundenzahl.benoetigt" />
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<message key="Ausschreibung.speichern.stundenzahl.benoetigt" />
+		</field-validator>
+	</field>
+	
+	<field name="stellenzahl">
+		<field-validator type="required">
+			<message key="Ausschreibung.speichern.stellenzahl.benoetigt" />
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<message key="Ausschreibung.speichern.stellenzahl.benoetigt" />
+		</field-validator>
+	</field>
+	
+	<field name="startet">
+		<field-validator type="required">
+			<message key="Ausschreibung.speichern.startet.benoetigt" />
+		</field-validator>		
+		<field-validator type="date">
+			<message key="Ausschreibung.speichern.startet.benoetigt" />
+		</field-validator>
+	</field>
+	
+	<field name="endet">
+		<field-validator type="required">
+			<message key="Ausschreibung.speichern.endet.benoetigt" />
+		</field-validator>		
+		<field-validator type="date">
+			<message key="Ausschreibung.speichern.endet.benoetigt" />
+		</field-validator>
+	</field>
+	
+	<field name="bewerbungsfrist">
+		<field-validator type="required">
+			<message key="Ausschreibung.speichern.bewerbungsfrist.benoetigt" />
+		</field-validator>		
+		<field-validator type="date">
+			<message key="Ausschreibung.speichern.bewerbungsfrist.benoetigt" />
+		</field-validator>
+	</field>
+	
+	<field name="name">
+		<field-validator type="requiredstring">
+			<message key="Ausschreibung.speichern.name.benoetigt" />
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">128</param>
+			<message key="Ausschreibung.speichern.name.zulang" />
+		</field-validator>	
+	</field>
+	
+	<field name="beschreibung">
+		<field-validator type="requiredstring">
+			<message key="Ausschreibung.speichern.beschreibung.benoetigt" />
+		</field-validator>
+	</field>
+	
+</validators>

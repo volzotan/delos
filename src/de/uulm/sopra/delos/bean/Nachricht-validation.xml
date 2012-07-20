@@ -1,0 +1,41 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2// EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+	<field name="absenderId">
+		<field-validator type="required">
+			<message key="Nachricht.fielderror.absender.unzulaessigerAbsender" />
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<message key="Nachricht.fielderror.absender.unzulaessigerAbsender" />
+		</field-validator>
+	</field>
+	
+	<field name="empfaengerId">
+		<field-validator type="required">
+			<message key="Nachricht.fielderror.empfaenger.unzulaessigerEmpfaenger" />
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<message key="Nachricht.fielderror.empfaenger.unzulaessigerEmpfaenger" />
+		</field-validator>
+	</field>
+	
+	<field name="betreff">
+		<field-validator type="requiredstring">
+			<message key="Nachricht.fielderror.betreff.leer" />
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">128</param>
+			<message key="Nachricht.fielderror.betreff.zuLang" />
+		</field-validator>	
+	</field>
+	
+	<field name="text">
+		<field-validator type="requiredstring">
+			<message key="Nachricht.fielderror.text.leer" />
+		</field-validator>		
+	</field>	
+	
+</validators>

@@ -1,0 +1,22 @@
+#header,
+#footer,
+#subnav,
+.tab-content .tab-pane {
+	diaplay: none;
+	visibility: hidden;
+}
+
+.tab-content .tab-pane.active {
+	diaplay: block;
+	visibility: visible;
+}
+
+.btn-group {
+	diaplay: none;
+	visibility: hidden;
+}
+
+.btn {
+	diaplay: none;
+	visibility: hidden;
+}

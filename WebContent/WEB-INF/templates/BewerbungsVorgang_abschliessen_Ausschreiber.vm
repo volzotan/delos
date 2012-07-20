@@ -1,0 +1,4 @@
+<p>Hallo $context.ausschreiberName,<br /> 
+die Bewerbung von $context.bewerberName für deine Ausschreibung &quot;$context.ausschreibungName&quot; 
+ist abgeschlossen. $context.bewerberName wird eine der HK-Stellen übernehmen.<br />
+<small>Dies ist eine automatisch generierte Systemnachricht.</small></p>

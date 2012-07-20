@@ -1,0 +1,36 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2// EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+	
+	<field name="dokumentId">
+		<field-validator type="required">
+			<message key="bewerbungsVorgangDokument.dokumentId.ungueltig" />
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<message key="bewerbungsVorgangDokument.dokumentId.ungueltig" />
+		</field-validator>
+	</field>
+	
+	<field name="bewerbungsVorgangId">
+		<field-validator type="required">
+			<message key="bewerbungsVorgangDokument.bewerbungsVorgangId.ungueltig" />
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<message key="bewerbungsVorgangDokument.bewerbungsVorgangId.ungueltig" />
+		</field-validator>
+	</field>
+	
+	<field name="status">
+		<field-validator type="required">
+			<message key="bewerbungsVorgangDokument.status.ungueltig" />
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">0</param>
+			<param name="max">4</param>
+			<message key="bewerbungsVorgangDokument.status.ungueltig" />
+		</field-validator>
+	</field>
+	
+</validators>

@@ -1,0 +1,4 @@
+<p>Hello $context.bewerberName,<br /> 
+$context.ausschreiberName changed details for $context.ausschreibungName.
+Please verify and accept these changes so that your application can be processed further.
+<small>This is an automatically generated system message.</small></p>

@@ -1,0 +1,4 @@
+<p>Hello $context.bearbeiterName,<br />
+the application by $context.bewerberName for &quot;$context.ausschreibungName&quot; created by $context.ausschreiberName has been deleted by the system.<br />
+The applicant deleted their account.<br />
+<small>This is an automatically generated system message.</small></p>	

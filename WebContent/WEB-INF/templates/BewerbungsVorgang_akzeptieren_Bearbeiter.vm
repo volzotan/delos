@@ -1,0 +1,4 @@
+<p>Hallo $context.bearbeiterName,<br /> 
+$context.bewerberName hat sich auf die Ausschreibung &quot;$context.ausschreibungName&quot; 
+beworben und wurde vom Ausschreiber akzeptiert.<br />
+<small>Dies ist eine automatisch generierte Systemnachricht.</small></p>

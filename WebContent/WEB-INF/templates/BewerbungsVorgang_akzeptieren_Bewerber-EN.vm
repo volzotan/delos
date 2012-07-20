@@ -1,0 +1,4 @@
+<p>Hello $context.bewerberName,<br /> 
+your application for &quot;$context.ausschreibungName&quot; was successful. The creator has accepted your application and handed it to the interviewer $context.bearbeiterName.<br />
+You now have to hand in the documents listed in the details of your application!<br />
+<small>This is an automatically generated system message.</small></p>
